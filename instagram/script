@@ -1,0 +1,41 @@
+(function () {
+  const selectors = Array.from(document.querySelectorAll(".Yi5aA"));
+  let video;
+  let src;
+
+  if (selectors.length === 0) {
+    video = document.querySelector("video");
+
+    if (video === null) {
+      src = document.querySelectorAll(".FFVAD")[0].src;
+    }
+    else {
+      src = video.src;
+    }
+  }
+  else {
+    const listItems = document.querySelectorAll(".vi798 .Ckrof");
+    const index = selectors.findIndex(x => x.classList.contains("XCodT"));
+    let listItem;
+
+    if (index === 0) {
+      listItem = listItems[0];
+    }
+    else if (index === selectors.length - 1) {
+      listItem = listItems[listItems.length - 1];
+    }
+    else {
+      listItem = listItems[1];
+    }
+
+    video = listItem.querySelector("video");
+
+    if (video === null) {
+      src = listItem.querySelector(".FFVAD").src;
+    }
+    else {
+      src = video.src;
+    }
+  }
+  window.location = src;
+})();
