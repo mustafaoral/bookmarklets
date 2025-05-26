@@ -1,0 +1,32 @@
+javascript: (function () {
+  function remove(selector) {
+    let element = document.querySelector(selector);
+
+    if (element) {
+      element.remove();
+    }
+    else{
+      console.log(`No element for selector ${selector}`);
+    }
+  }
+
+  const fullCover = "position: absolute; top: 0; right: 0; bottom: 0; left: 0";
+
+  remove("#header");
+  remove("#headermedium");
+  remove("#headersmall");
+  remove("#teaser");
+  remove("#banner");
+
+  remove("map[name=headermap]");
+  remove("map[name=headermediummap]");
+  remove("map[name=headersmallmap]");
+
+  remove("#sv_mapCredit");
+
+  remove("#footer");
+
+  document.querySelector(".sv_topbar ").style.border = "none";
+  document.querySelector("#chart").style = fullCover;
+  document.querySelector("#chart > .sv_glass").style = fullCover;
+})();
